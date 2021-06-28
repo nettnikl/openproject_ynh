@@ -24,8 +24,7 @@ ynh_string_in_file () {
 
 	local delimit=@
 	# Escape the delimiter if it's in the string.
-  if grep "$match_string" $target_file; then
-  else
+  if ! grep "$match_string" $target_file; then
     echo $string > 
   fi
 }
